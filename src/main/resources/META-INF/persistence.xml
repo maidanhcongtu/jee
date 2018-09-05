@@ -7,8 +7,8 @@
 		<jta-data-source>java:jboss/datasources/mydb</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+			<property name="hibernate.ejb.use_class_enhancer" value="true"/>
 			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>

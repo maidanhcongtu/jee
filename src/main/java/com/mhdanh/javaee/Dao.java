@@ -20,6 +20,8 @@ public class Dao {
 	
 	public List<PostEntity> getAllPost() {
 		List<PostEntity> list = em.createQuery("SELECT post FROM PostEntity post", PostEntity.class).getResultList();
+		System.out.println("view model");	
+		list.forEach(i -> System.out.println(i.getDetail().getDateCreated()));
 		return list;
 	}
 	

@@ -3,7 +3,11 @@ package com.mhdanh.javaee.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -24,14 +28,13 @@ import lombok.Setter;
 public class PostDetailEntity {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	private LocalDate dateCreated;
 
 	@OneToOne
-//	@JoinColumn(name = "post_id")
-	@MapsId
+	@JoinColumn(name = "post_id")
 	private PostEntity post;
 
 }
